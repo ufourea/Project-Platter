@@ -1,0 +1,2 @@
+change url in mail body from localhost to projectplatter.com
+install modules using npm

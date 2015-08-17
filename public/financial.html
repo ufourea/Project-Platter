@@ -1,0 +1,247 @@
+<style>
+table {
+    border-collapse: collapse;
+}
+
+th {
+	background-color: deepskyblue;
+}
+
+</style>
+
+<div class="container">
+<br><br>
+
+	<div class="row center"> 
+	</div>
+      
+	<div class="row">
+	<div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s4"><a class="active" href="#test1">Account Details</a></li>
+        <li class="tab col s4"><a href="#test2">Banking</a></li>
+        <li class="tab col s4"><a href="#test3">History</a></li>
+      </ul>
+
+    </div>
+
+    <div id="test1" class="col s12">
+	
+	<form class="col s12">
+		
+	<div class="row center">
+        </div>
+      
+	
+         <div class="row">
+        <div class="col s6 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Payment Details</span>
+		<div class="row">
+		<div class="input-field col s5">
+        	<span>Payment Method</span>
+      		</div>
+      		<div class="input-field col s3">
+        	<span style="color:goldenrod">PayPal</span>
+      </div> </div>
+
+	<div class="row">
+		<div class="input-field col s5">
+        	<span>Paypal ID</span>
+      		</div>
+      		<div class="input-field col s6">
+        	<input value="NT5ME57QZJ7UM" id="pid" type="text" length="13" class="validate">
+      </div> </div>            
+			
+            </div>
+            <div class="card-action">
+              <button class="btn waves-effect waves-light" type="submit" name="action">Save</button>
+            </div>
+          </div>
+      </div>
+     </div>
+	
+    </form>
+
+	</div>
+
+
+    <div id="test2" class="col s12">
+
+	<form class="col s12">
+
+	<div class="row center">
+        </div>
+
+	<div class="row">
+ 
+
+	<div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s6"><a class="active" href="#test21">Balance</a></li>
+        <li class="tab col s6"><a href="#test22">Withdraw</a></li>
+      </ul>
+
+    </div>
+
+	<div id="test21" class="col s12">
+
+	<div class="row">
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <div class="row">
+		<div class="input-field col s5">
+        	<span>Assignments</span>
+      		</div>
+      		<div class="input-field col s6">
+        	<span>200 USD</span>
+      </div> </div>  		
+
+		<div class="row">
+		<div class="input-field col s5">
+        	<span>Referrals</span>
+      		</div>
+      		<div class="input-field col s6">
+        	<span>20 USD</span>
+      </div> </div>  
+
+		<div class="row">
+		<div class="input-field col s5">
+        	<span>Total</span>
+      		</div>
+      		<div class="input-field col s6">
+        	<span>220 USD</span>
+      </div> </div>  
+
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+	</div>
+    <div id="test22" class="col s12">
+	<div class="row right">
+        <div class="col s12 m12">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+             <div class="row">
+		<div class="input-field col s6">
+        	<span>Current Balance</span>
+      		</div>
+      		<div class="input-field col s5">
+        	<span>220 USD</span>
+      </div> </div> 
+
+	<div class="row">
+		<div class="input-field col s6">
+        	<span>Withdrawable</span>
+      		</div>
+      		<div class="input-field col s5">
+        	<input id="amt" type="text" class="validate">
+      </div> </div>  
+
+		<div class="row">
+		<div class="input-field col s6">
+        	<span>Password</span>
+      		</div>
+      		<div class="input-field col s5">
+        	<input id="password" type="password" class="validate">
+      </div> </div>  
+
+ 
+            </div>
+            <div class="card-action">
+              <button class="btn waves-effect waves-light" type="submit" name="action">Make Withdrawal</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+	</div>
+ </div>		
+	
+    </form>
+
+	</div>
+
+
+    <div id="test3" class="col s12">
+<form class="col s12">
+	<div class="row center">
+        </div>
+		
+	<div class="row center">
+        <div class="input-field col s3">
+    	<select>
+      <option value="" disabled selected>History Type</option>
+      <option value="1">Unsettled</option>
+      <option value="2">Settled</option>
+      <option value="3">Withdrawals</option>
+    	</select>
+	
+  	</div>
+
+	<div class="row">
+		<div class="input-field col s1">
+        	<span>From</span>
+		</div>
+		<div class="input-field col s2">
+		 <input type="date" class="datepicker">
+      		</div>
+      		<div class="input-field col s1">
+        	<span>To</span>
+		</div>
+		<div class="input-field col s2">
+		 <input type="date" class="datepicker">
+		</div>
+		<div class="input-field col s2">
+		 <button class="btn waves-effect waves-light" type="submit" name="action">Show</button>
+		</div>
+      </div> 
+      
+
+
+	   <div class="row center">
+      </div>
+
+    </form>
+
+
+	</div>
+  
+	</div>
+
+		
+	</div>
+
+      <br><br>
+
+    </div>
+  </div>
+
+
+<!--  Scripts-->
+  
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  
+<script src="js/materialize.js">
+</script>
+  <script src="js/init.js"></script>
+
+<script type="text/javascript">
+
+$('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15, // Creates a dropdown of 15 years to control year
+    closeOnSelect: true
+  
+  });
+</script>
+<script>
+$(document).ready(function() {
+    $('select').material_select();
+});
+</script>

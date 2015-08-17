@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <title>Project Platter</title>
+    <!-- CSS  -->
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-65727529-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<style type="text/css">
+    #load{
+    width:100%;
+    height:100%;
+    position:fixed;
+    z-index:9999;
+    top: 50%;
+    left: 50%;
+}
+</style>
+</head>
+
+<body>
+    
+    <nav class="white" id="navHeader" role="navigation">
+        <div class="nav-wrapper"><a id="logo-container" href="#" class="brand-logo"><img class="responsive-img" src="images/assign.png" height="60" width="60"></a>
+            <!--<ul class="right">
+                <li><a href="#" class="waves-effect waves-light orange btn" id="menuPostBtn">Post an Assignent</a></li>
+            </ul>-->
+            <ul class="right">
+                <li><a href="#" id="menuSignUpBtn" class="grey-text">SIGN UP</a></li>
+            </ul>
+            <ul class="right">
+                <li><a href="#" id="menuLoginBtn" class="grey-text">LOGIN</a></li>
+            </ul>
+            <ul class="right">
+                <li><a href="#" id="menuLogoutBtn" class="grey-text">LOGOUT</a></li>
+            </ul>
+            <ul class="right">
+                <li><a href="#" id="menuHomeBtn" class="grey-text">HOME</a></li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+        </div>
+    </nav>
+
+    <div class="section no-pad-bot" id="index-banner">
+        <div id="contentContainer">
+            <div class="parallax-container">
+            <div class="parallax"><img src="images/work.png" width="100%"></div>
+            </div>
+    
+            <div class="row center">
+            <h5 class="header col s12 light">A platform to make your life easier </h5>
+            </div>
+
+            <div class="row center">
+                <a id="getStartedBtn" class="btn-large waves-effect waves-light orange">Get Started</a>
+            </div>
+
+            <div class="row center">
+            <img src="images/interactive.gif">
+            </div>
+    </div>
+    </div>
+
+    <div class="container">
+    </div>
+    
+    <br>
+    <br>
+    <div class="section">
+    </div>
+    </div>
+    
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content" align="center">
+    
+    </div>
+  </div>
+          
+    <footer class="page-footer grey darken-3">
+        <div class="container" id="pageFooter">
+            <div class="row">
+                <div class="col l6 s12">
+                    <p class="grey-text">Awesome project in the making</p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container center clearfix">
+            <p class="grey-text"> &copy; Copyright Project Platter 2015 | All Rights Reserved</p>
+                </div>
+            </div>
+            <br>
+        </div>
+
+    </footer>
+    <!--  Scripts-->
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+    <script src="ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="js/myScript.js"></script>
+    <script>
+    $(document).ready(function() {
+    $('.parallax').parallax();
+     $('select').material_select();
+    });
+    </script>
+
+
+</body>
+
+</html>

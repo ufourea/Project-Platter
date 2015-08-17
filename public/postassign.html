@@ -1,0 +1,82 @@
+<div id="postAssignDiv" class="container">
+    <div class="row">
+        <h4 class="header left orange-text">Post an assignment</h4>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            <select id="projectCategory">
+                <option disabled selected>Select a category of work</option>
+                <option>Programming</option>
+                <option>Writing</option>
+                <option>other</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            <input id="projectName" type="text" class="validate">
+            <label for="projectName">Name of the Project</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            <input id="projectSkills" type="text" class="validate">
+            <label for="projectSkills">Enter some skills that relate to the project</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            <label for="projectDetails">Describe your project in detail</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            <textarea id="projectDetails" class="materialize-textarea"></textarea>
+        </div>
+    </div>
+    <div class="input-field col s6">
+        <form method = "post" action = "/uploadAttachment" enctype ="multipart/form-data">
+            <input type="file" class="validate" name = "attachfile" id="attachFile" accept="application/x-zip-compressed,image/*,application/pdf,.doc,.docx,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" />
+            <input type="submit" id = "submitAttachmentBtn" value="Upload" />
+        </form>
+    </div>
+    <div class="row">
+        <div class="input-field col s3">
+            <label for="budget">Budget you have in mind?</label>
+            <input id="budget" type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' class="validate">
+        </div>
+        <div class="input-field col s3">
+            <select id="currency">
+                <option disabled selected>Select Currency</option>
+                <option>INR</option>
+                <option>USD</option>
+            </select>
+        </div>
+    </div>
+    <button class="btn waves-effect waves-light" id="postProjectBtn" name="action">Post Assignment</button>
+</div>
+<div id="assignConfirmDiv" style="display:none;" class="container">
+<br>
+    <div class="row">
+        <h4 class="header center orange-text">Project Summary</h4>
+    </div>
+
+    <div id="assignConfirmDiv1"></div>
+    <br><br>
+    <div class="row" align="center">
+         <button class="btn waves-effect waves-light" id="submitProjectBtn" name="action">Submit</button>
+         <button class="btn waves-effect waves-light" id="cancelProjectSubmitBtn" name="action">Cancel</button>
+    </div>
+   
+</div>
+
+
+
+<script>
+$(document).ready(function() {
+     $('select').material_select();
+    $('#budget').bind("paste",function(e) {
+      e.preventDefault();
+  });
+});
+</script>

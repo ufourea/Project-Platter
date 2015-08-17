@@ -1,0 +1,51 @@
+<style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table,
+td,
+th {
+    border: 1px solid black;
+}
+</style>
+
+<div class="container">
+<div class="row center">
+</div>
+<table border="1">
+    <tr>
+        <td>
+            <div class="row center">
+                <button class="btn waves-effect waves-light" type="submit" id="editProfileBtn" name="action">Edit Profile</button>
+            </div>
+            <div class="row center">
+                <div class="input-field col s6">
+                    <img class="responsive-img" id="profileImg" height="75px" width="120px" src="images/pp.gif">
+                    <p  style="font-family:century gothic" id="profileLocation"></p>
+                    <p style="font-family:century gothic">Member since <span id="profileDoj"></span></p>
+                </div>
+                <div class="input-field col s6">
+                    <p align="left" style="font-family:century gothic" id="profileUserName">Username</p>
+                    <p align="left" style="font-family:century gothic" id="profileBio"></p>
+
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="row center">
+                <div class="input-field col s12">
+                    <p contenteditable="true">0 USD/hr </p>
+                    <button class="btn waves-effect waves-light" id="saveProfileBtn" name="action">Save Profile</button>
+                    <hr>
+                    <p><span id="openProjects">0</span> Open projects</p>
+                    <p><span id="activeProjects">0</span> Active projects</p>
+                    <p><span id="pastProjects">0</span> Past projects</p>
+                    <p><span id="totalProjects">0</span> Total projects</p>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+</div>

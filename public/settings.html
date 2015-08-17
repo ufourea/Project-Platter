@@ -1,0 +1,129 @@
+<div class="container">
+    <br>
+    <br>
+    <div class="row">
+        <div class="col s12">
+            <ul class="tabs">
+                <li class="tab col s4"><a class="active" href="#test1">Details</a></li>
+                <li class="tab col s4"><a href="#test2">Security</a></li>
+                <li class="tab col s4"><a href="#test3">Notifications</a></li>
+            </ul>
+        </div>
+        <div id="test1" class="col s12">
+            <form class="col s12">
+                <div class="row center">
+                    <div class="input-field col s6">
+                    </div>
+                </div>
+                <div class="row center">
+                    <div class="input-field col s6">
+                        <input id="firstName" type="text" class="validate">
+                        <label for="firstName">First Name</label>
+                    </div>
+                </div>
+                <div class="row center">
+                    <div class="input-field col s6">
+                        <input id="lastName" type="text" class="validate">
+                        <label for="lastName">Last Name</label>
+                    </div>
+                </div>
+                <div class="row center">
+                    <div class="input-field col s6">
+                        <input type="text" id="address" class="validate" />
+                        <label for="address">Address</label>
+                    </div>
+                </div>
+                <div class="row center">
+                    <div class="input-field col s6">
+                        <input id="city" type="text" class="validate">
+                        <label for="city">City</label>
+                    </div>
+                </div>
+                <div class="row center">
+                    <div class="input-field col s6">
+                        <input id="state" type="text" class="validate">
+                        <label for="state">State</label>
+                    </div>
+                </div>
+                <div class="row center">
+                    <div class="input-field col s6">
+                        <input id="postalCode" type="text" class="validate">
+                        <label for="postalCode">Postal Code</label>
+                    </div>
+                </div>
+                <div class="row center">
+                    <div class="input-field col s6">
+                        <input id="country" type="text" class="validate">
+                        <label for="country">Country</label>
+                    </div>
+                </div>
+                <button class="btn waves-effect waves-light" id="saveDetailsBtn" name="action">Save
+                </button>
+            </form>
+        </div>
+        <div id="test2" class="col s12">
+            <div class="row center">
+                <div class="input-field col s12">
+                    <h6 align="left"><b>Change Password</b></h6>
+                    <hr size="1">
+                </div>
+            </div>
+            <div class="row center">
+                <div class="input-field col s6">
+                    <input id="pwd" type="password" class="validate">
+                    <label for="pwd">Current Password</label>
+                </div>
+            </div>
+            <div class="row center">
+                <div class="input-field col s6">
+                    <input id="newPwd" type="password" class="validate">
+                    <label for="newPwd">New Password</label>
+                </div>
+            </div>
+            <div class="row center">
+                <div class="input-field col s6">
+                    <input id="cnfPwd" type="password" class="validate">
+                    <label for="cnfPwd">Re-enter Password</label>
+                </div>
+            </div>
+            <button class="btn waves-effect waves-light" id="updatePasswordBtn" name="action">Update Password
+            </button>
+           
+        </div>
+        <div id="test3" class="col s12">
+            <div class="row center">
+                <div class="input-field col s12">
+                    <h6 align="left"><b>Email Settings</b></h6>
+                    <hr size="1">
+                </div>
+            </div>
+            <div class="row center">
+                <div class="input-field col s6">
+                    <input id="updateEmail" type="email" class="validate">
+                    <label for="email">Email Address</label>
+                </div>
+            </div>
+            <div class="row center">
+                <div class="input-field col s6">
+                    <input id="currPwd" type="password" class="validate">
+                    <label for="currPwd">Enter Current Password</label>
+                </div>
+            </div>
+            <button class="btn waves-effect waves-light" id="updateEmailBtn" name="updateEmailBtn">Update Email Address
+            </button>
+            <div class="row center">
+                <div class="input-field col s12">
+                    <h6 align="left"><b>Email Notification Settings</b></h6>
+                    <hr size="1">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modal1" class="modal">
+    <div class="modal-content" align="center">
+    
+    </div>
+  </div>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js"></script>

@@ -1,0 +1,221 @@
+<meta name="665337827250-vvti3i2j99na3hlp27u1eu4oj56bvr32" content="665337827250-vvti3i2j99na3hlp27u1eu4oj56bvr32.apps.googleusercontent.com">
+
+<div class="container" id="con" >
+    <div class="row">
+    </div>
+
+    <form class="col s12" >
+      <div class="row">
+        
+      </div>
+
+      <div class="row">
+        
+        <div class="input-field col s4">
+             <div id="fb-root"></div>
+                   <input type="button" value="Login" onclick="logIn();" />
+                   
+        </div>
+
+        <div class="input-field col s4">
+                <button class="g-signin" 
+                    data-scope="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/userinfo.email"
+                    data-requestvisibleactions="http://schemas.google.com/AddActivity"
+                    data-clientId="665337827250-vvti3i2j99na3hlp27u1eu4oj56bvr32.apps.googleusercontent.com"
+                    data-accesstype="offline"
+                    data-callback="mycoddeSignIn"
+                    data-theme="dark"
+                    data-cookiepolicy="single_host_origin">
+                </button>
+        </div>
+
+      </div>
+
+
+    <div class="row">
+    <div class="input-field col s3">
+        <input id="txtFirstName" type="text" class="signUpElements validate" required>
+        <label for="txtFirstName">First Name</label>
+    </div>
+
+    <div class="input-field col s3">
+        <input id="txtLastName" type="text" class="signUpElements validate" required>
+        <label for="txtLastName">Last Name</label>
+    </div>
+    </div>
+
+    <div class="row">
+    <div class="input-field col s6">
+        <input id="txtEmail" type="email" class="signUpElements validate" required>
+        <label for="txtEmail">Email Address</label>
+    </div>
+    </div>
+
+    <div class="row">
+    <div class="input-field col s6">
+        <input id="txtMoileNo" type="tel" class="signUpElements validate" required>
+        <label for="txtMobileNo">Mobile No.</label>
+    </div>
+    </div>
+
+    <div class="row">
+    <div class="input-field col s6">
+        <input id="txtPassword" type="password" class="signUpElements validate" required>
+        <label for="txtPassword">Password</label>
+    </div>
+    </div>
+
+    <div class="row">
+    <div class="input-field col s6">
+        <input id="txtConfirmPwd" type="password" class="signUpElements validate" required>
+        <label for="txtConfirmPwd">Confirm Password</label>
+    </div>
+    </div>
+
+
+     <div class="row">
+        <div class="input-field col s2">
+        <button class="btn waves-effect waves-light" id="signUpBtn">Sign Up</button>
+        </div>
+       </div>
+
+
+</form>
+</div>
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script');
+    po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://plus.google.com/js/client:plusone.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(po, s);
+  })();
+  </script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+
+ var gpclass = (function(){
+    
+    //Defining Class Variables here
+    var response = undefined;
+    return {
+        //Class functions / Objects
+        
+        mycoddeSignIn:function(response){
+            // The user is signed in
+            if (response['access_token']) {
+            
+                //Get User Info from Google Plus API
+                gapi.client.load('plus','v1',this.getUserInformation);
+                
+            } else if (response['error']) {
+                // There was an error, which means the user is not signed in.
+                //alert('There was an error: ' + authResult['error']);
+            }
+        },
+        
+        getUserInformation: function(){
+            var request = gapi.client.plus.people.get( {'userId' : 'me'} );
+            request.execute( function(profile) {
+                var email = profile['emails'].filter(function(v) {
+                    return v.type === 'account'; // Filter out the primary email
+                })[0].value;
+                var fName = profile.displayName.split(" ")[0];
+                var lName = profile.displayName.split(" ")[1];
+                $("#txtFirstName").val(fName);
+                $("#txtLastName").val(lName);
+                $("#txtEmail").val(email);
+                $("#txtMobileNo").val("991222");
+                
+            });
+        }
+    
+    }; //End of Return
+    })();
+    
+    function mycoddeSignIn(gpSignInResponse){
+        gpclass.mycoddeSignIn(gpSignInResponse);
+    }
+
+
+ window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '667999616635085',
+            status     : true, // check login status
+            cookie     : true, // enable cookies to allow the server to access the session
+            xfbml      : true,
+            version    : 'v2.4'
+        });
+      };
+
+   
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=667999616635085";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+
+      function logIn() {
+        FB.login(
+            function(response) {
+                if (response.status === 'connected') {
+                    FB.api('/me', function(response) {
+                        console.log(response);
+                        console.log('Good to see you, ' + response.name + '.');
+                        document.getElementById("txtEmail").value = response.email;
+                        $('#userInfo').html(response.name + '<br>' + response.location.name);
+                    });
+
+                    FB.api("/me/picture?width=200&redirect=0&type=normal&height=200", function (response) {
+                        if (response && !response.error) {
+                            /* handle the result */
+                            console.log('PIC ::', response);
+                            $('#userPic').attr('src', response.data.url);
+                        }
+                    });
+                }
+            }
+        ), {scope: 'public_profile,email'});
+    }
+
+
+
+   FB.Event.subscribe('auth.authResponseChange', function(response) 
+{
+     if (response.status === 'connected') 
+     {
+        //SUCCESS
+     }   
+     else if (response.status === 'not_authorized') 
+    {
+        //FAILED
+    } else
+    {
+        //UNKNOWN ERROR. Logged Out
+    }
+});
+
+   function getPhoto()
+    {
+      FB.api("/me/picture?width=200&redirect=0&type=normal&height=200", function (response) {
+                        if (response && !response.error) {
+                            /* handle the result */
+                            console.log('PIC ::', response);
+                            $('#userPic').attr('src', response.data.url);
+                        }
+                    });
+  }
+
+   function Logout()
+    {
+        FB.logout(function(){document.location.reload();});
+    }
+
+</script>
+<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+
