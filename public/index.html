@@ -5,11 +5,19 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
     <title>Project Platter</title>
+     <meta name="keywords" content="Assignments, Homework, Project, Assignment help, Homework Help, Essay, Writing Assignment, Coursework, Student Assignments"/>
+      <meta name="description" content="Project Platter - A Platform to connect you with Students who are willing to help you."/>
+     <meta name="665337827250-vvti3i2j99na3hlp27u1eu4oj56bvr32" content="665337827250-vvti3i2j99na3hlp27u1eu4oj56bvr32.apps.googleusercontent.com">
+     <link rel="shortcut icon" type="image/gif" href="images/fav.gif"/>
     <!-- CSS  -->
     <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/modal.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <script src="js/jquery-1.10.2.min.js"></script>
+    
     <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet" type="text/css" />
+
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -29,75 +37,272 @@
     top: 50%;
     left: 50%;
 }
+
+.scrollup {
+  width: 40px;
+  height: 40px;
+  opacity: 0.7;
+  position: fixed;
+  bottom: 50px;
+  right: 100px;
+  display: none;
+  text-indent: -9999px;
+  background: url('images/up.svg') no-repeat;
+}
+.fixed-header {
+  position: fixed;
+  top:0; 
+  left:0;
+  width: 100%; 
+  z-index: 1;
+}
+#first {
+    position:absolute;
+    top:1450px;
+    left:260px;
+}
+ .dir_1 {
+    position:absolute;
+    top:1450px;
+    left:630px;
+    z-index:-1;
+    width:323px;
+    height:503px;
+    background-image:url("images/arrow_1.png")
+}
+
+#sec {
+    position:absolute;
+    top:1850px;
+    left:500px;
+}
+ .dir_2 {
+    position:absolute;
+    top:2000px;
+    left:160px;
+    z-index:-1;
+    width:878px;
+    height:550px;
+    background-image:url("images/arrow_2.png")
+}
+ .dir_3 {
+    position:absolute;
+    top:2535px;
+    left:750px;
+    z-index:-1;
+    width:113px;
+    height:58px;
+    background-image:url("images/arrow_3.png")
+}
+
+#third {
+    position:absolute;
+    top:2510px;
+    left:420px;
+}
+
 </style>
 </head>
 
 <body>
-    
+
+    <header>
     <nav class="white" id="navHeader" role="navigation">
-        <div class="nav-wrapper"><a id="logo-container" href="#" class="brand-logo"><img class="responsive-img" src="images/assign.png" height="60" width="60"></a>
-            <!--<ul class="right">
-                <li><a href="#" class="waves-effect waves-light orange btn" id="menuPostBtn">Post an Assignent</a></li>
-            </ul>-->
-            <ul class="right">
-                <li><a href="#" id="menuSignUpBtn" class="grey-text">SIGN UP</a></li>
-            </ul>
-            <ul class="right">
-                <li><a href="#" id="menuLoginBtn" class="grey-text">LOGIN</a></li>
+        <div class="nav-wrapper animate-children"><a id="logo-container" href="#" class="brand-logo"><img src="images/logo.png"></a>
+            
+            <ul class="right main-nav">
+                <li><a href="#" id="LoginModalBtn" class="grey-text cd-signin">LOGIN</a></li>
             </ul>
             <ul class="right">
                 <li><a href="#" id="menuLogoutBtn" class="grey-text">LOGOUT</a></li>
             </ul>
             <ul class="right">
+                <li><a href="#section_works" id="menuHowBtn" class="grey-text">HOW IT WORKS</a></li>
+            </ul>
+            <ul class="right">
+                <li><a href="#section_about" id="menuAboutBtn" class="grey-text">ABOUT</a></li>
+            </ul>
+            <ul class="right">
                 <li><a href="#" id="menuHomeBtn" class="grey-text">HOME</a></li>
             </ul>
+             
             <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
         </div>
     </nav>
 
+    <div id="load">
+    <div class="preloader-wrapper big active">
+      <div class="spinner-layer spinner-blue">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="spinner-layer spinner-red">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="spinner-layer spinner-yellow">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="spinner-layer spinner-green">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+</header>
+    
+    <div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
+    <div class="cd-user-modal-container"> <!-- this is the container wrapper -->
+      
+      <div class="modal-social-icons">
+                  <a href='#' class="btn btn-default facebook" onclick="logIn();"> <i class="fa fa-facebook modal-icons"></i> Continue with Facebook </a>
+                  <a href='#' class="btn btn-default google" onclick="glogin()"> <i class="fa fa-google-plus modal-icons"></i> Continue with Google </a>
+      </div> 
+       <div class="hr">
+            <div class="inner">OR</div>
+        </div>
+      <div id="cd-login"> <!-- log in form -->
+        <form class="cd-form">
+          <p class="fieldset">
+            <label class="image-replace cd-email" for="txtEmail">E-mail</label>
+            <input class="full-width has-padding has-border validate loginElement" id="txtEmail" type="email" placeholder="E-mail" required>
+            <span class="cd-error-message">Invalid Email!</span>
+          </p>
+
+          <p class="fieldset">
+            <label class="image-replace cd-password" for="txtPwd">Password</label>
+            <input class="full-width has-padding has-border validate loginElement" id="txtPwd" type="password"  placeholder="Password" required>
+            <span class="cd-error-message">Invalid Password!</span>
+          </p>
+
+          <!--<p class="fieldset">
+            <input type="checkbox" id="remember-me" checked>
+            <label for="remember-me">Remember me</label>
+          </p>-->
+
+          <p class="fieldset1">
+            <input class="fuller-width" id="loginBtn" type="Button" value="Login">
+          </p>
+          <p class="switch_login">
+            Don't Have an Account ?<a href="#"> Sign Up</a>
+          </p>
+        </form>
+        <p class="cd-form-bottom-message"><a href="#">Forgot your password?</a></p>    
+         <a href="#" class="cd-close-form">Close</a>
+      </div> <!-- cd-login -->
+
+      <div id="cd-signup"> <!-- sign up form -->
+        <form class="cd-form">
+          <p class="fieldset">
+            <label class="image-replace cd-username" for="txtName">Name</label>
+            <input class="full-width has-padding has-border validate signUpElements" id="txtName" type="text" placeholder="Name" required>
+            <span class="cd-error-message">Error message here!</span>
+          </p>
+
+          <p class="fieldset">
+            <label class="image-replace cd-email" for="txtEmail1">E-mail</label>
+            <input class="full-width has-padding has-border validate signUpElements" id="txtEmail1" type="email" placeholder="E-mail" required>
+            <span class="cd-error-message">Error message here!</span>
+          </p>
+
+          <p class="fieldset">
+            <label class="image-replace cd-mobile" for="txtMobileNo">Mobile</label>
+            <input class="full-width has-padding has-border validate signUpElements" id="txtMobileNo" type="tel" placeholder="Mobile" required>
+            <span class="cd-error-message">Error message here!</span>
+          </p>
+
+          <p class="fieldset">
+            <label class="image-replace cd-password" for="txtPassword">Password</label>
+            <input class="full-width has-padding has-border validate signUpElements" id="txtPassword" type="password" placeholder="Password" required>
+            <a href="#" class="show-password">Show</a>
+            <span class="cd-error-message">Error message here!</span>
+          </p>
+
+          <!--<p class="fieldset">
+            <input type="checkbox" id="accept-terms">
+            <label for="accept-terms">I agree to the <a href="#0">Terms & Conditions</a></label>
+          </p>-->
+
+          <p class="fieldset1">
+            <input class="fuller-width" id="signUpBtn" type="Button" value="Create Account">
+          </p>
+
+          <p class="switch_signup">
+           Already Have an Account ?<a href="#"> Login</a>
+          </p>
+        </form>
+
+        <a href="#" class="cd-close-form">Close</a>
+      </div> <!-- cd-signup -->
+
+      <div id="cd-reset-password"> <!-- reset password form -->
+        <p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
+
+        <form class="cd-form">
+          <p class="fieldset">
+            <label class="image-replace cd-email" for="reset-email">E-mail</label>
+            <input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+            <span class="cd-error-message">Error message here!</span>
+          </p>
+
+          <p class="fieldset">
+            <input class="fuller-width has-padding" type="submit" value="Reset password">
+          </p>
+        </form>
+
+        <p class="cd-form-bottom-message"><a href="#0">Back to Login</a></p>
+      </div> <!-- cd-reset-password -->
+      <a href="#0" class="cd-close-form">Close</a>
+    </div> <!-- cd-user-modal-container -->
+  </div>    
+
     <div class="section no-pad-bot" id="index-banner">
-        <div id="contentContainer">
-            <div class="parallax-container">
-            <div class="parallax"><img src="images/work.png" width="100%"></div>
-            </div>
-    
-            <div class="row center">
-            <h5 class="header col s12 light">A platform to make your life easier </h5>
-            </div>
-
-            <div class="row center">
-                <a id="getStartedBtn" class="btn-large waves-effect waves-light orange">Get Started</a>
-            </div>
-
-            <div class="row center">
-            <img src="images/interactive.gif">
-            </div>
-    </div>
+        <div id="contentContainer"></div>
     </div>
 
-    <div class="container">
+    
+
     </div>
     
-    <br>
-    <br>
-    <div class="section">
-    </div>
-    </div>
-    
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal">
-    <div class="modal-content" align="center">
-    
-    </div>
-  </div>
           
-    <footer class="page-footer grey darken-3">
+    <footer class="page-footer">
         <div class="container" id="pageFooter">
-            <div class="row">
-                <div class="col l6 s12">
-                    <p class="grey-text">Awesome project in the making</p>
-                </div>
-            </div>
+          
+            <h4 class="grey-text text-lighten-3" style="font-size: 15px;">About Project Platter</h4>
+            <ul>
+            <li><a href="#" id="AboutUsBtn" class="grey-text">About Us</a></li>
+            <li><a href="#" id="termsBtn" class="grey-text">Terms & Conditions</a></li>
+            <li><a href="#" id="refundBtn" class="grey-text">Refunds</a></li>
+             <li><a href="#" id="privacyBtn" class="grey-text">Privacy Policy</a></li>
+            <li><a href="#" id="contactBtn" class="grey-text">Contact Us</a></li>
+            </ul>
+        
         </div>
         </div>
         <div class="footer-copyright">
@@ -107,6 +312,7 @@
             </div>
             <br>
         </div>
+        <a href="#" class="scrollup">Scroll</a>
 
     </footer>
     <!--  Scripts-->
@@ -114,13 +320,158 @@
     <script src="js/init.js"></script>
     <script src="ckeditor/ckeditor.js"></script>
     <script type="text/javascript" src="js/myScript.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script>
     $(document).ready(function() {
-    $('.parallax').parallax();
-     $('select').material_select();
+    
+     $(window).load(function(){
+    $('#load').fadeOut('slow',function(){$(this).remove();});
+        });
     });
-    </script>
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {
+            $('.scrollup').fadeIn();
+        } else {
+            $('.scrollup').fadeOut();
+        }
+    });
 
+    $('.scrollup').click(function () {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 600);
+        return false;
+    });
+
+
+
+    $(window).scroll(function(){
+    if ($(this).scrollTop() >= 20) {
+       $('nav').addClass('fixed-header');
+    }
+    else {
+       $('nav').removeClass('fixed-header');
+    }
+});
+
+    </script>
+    <script src="js/modal.js"></script>
+
+  <script type="text/javascript">
+
+  function glogin() {
+      var myParams = {
+    'clientid' : '665337827250-vvti3i2j99na3hlp27u1eu4oj56bvr32.apps.googleusercontent.com', //You need to set client id
+    'cookiepolicy' : 'single_host_origin',
+    'callback' : 'loginCallback', //callback function
+    'approvalprompt':'force',
+    'scope' : 'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read'
+  };
+  gapi.auth.signIn(myParams);
+}
+
+  function loginCallback(result){
+    if(result['status']['signed_in']){
+        gapi.client.load('plus','v1',this.getUserInformation);
+        
+    }
+ 
+}
+
+    function getUserInformation(){
+      var request = gapi.client.plus.people.get( {'userId' : 'me'} );
+      request.execute( function(profile) {
+        var email = profile['emails'].filter(function(v) {
+          return v.type === 'account'; // Filter out the primary email
+        })[0].value;
+        
+        $("#txtEmail").val(email);
+      });
+    }
+
+  function onLoadCallback(){
+    gapi.client.setApiKey('665337827250-vvti3i2j99na3hlp27u1eu4oj56bvr32'); //set your API KEY
+    gapi.client.load('plus', 'v1',function(){});//Load Google + API
+}
+  </script>
+
+    <script type="text/javascript">
+        window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '667999616635085',
+            status     : true, // check login status
+            cookie     : true, // enable cookies to allow the server to access the session
+            xfbml      : true,
+            version    : 'v2.4'
+        });
+
+  };
+   
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=667999616635085";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+  function logIn() {
+        FB.login(
+            function(response) {
+                if (response.authResponse) {
+                  getUserInfo(); 
+                }
+            }, { scope: 'email,public_profile' });
+      
+    }
+
+
+ function getUserInfo() {
+    FB.api('/me?fields=name,picture,email', function(response) {
+
+
+        $.ajax({
+        method: "POST",
+        url: "fblogin",
+        data: {
+            "email": response.email,
+            "firstname": response.name
+        },
+        success: function(res) {
+                alert(res);
+                contentLoader("dashboard.html");
+                $("#LoginModalBtn").hide();
+                $("#menuHomeBtn").show();
+                $("#menuAboutBtn").hide();
+                $("#menuHowBtn").hide();
+                $("#menuLogoutBtn").show();
+                $('.cd-user-modal').removeClass('is-visible');
+            
+        }
+    });
+      
+    });
+    
+  }
+
+   function getPhoto()
+    {
+      FB.api('/me/picture?type=normal', function(response) {
+ 
+          var str=response.data.url;
+    });
+  }
+  
+</script>
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script');
+    po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://plus.google.com/js/client:plusone.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(po, s);
+  })();
+  </script>
 
 </body>
 

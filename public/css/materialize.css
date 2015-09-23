@@ -3,7 +3,6 @@
  * Copyright 2014-2015 Materialize
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
- @import url(http://fonts.googleapis.com/css?family=Lato);
 
 .materialize-red.lighten-5 {
   background-color: #fdeaeb !important; }
@@ -1975,7 +1974,6 @@ ul {
   list-style-type: none; }
 
 a {
-  color: #039be5;
   text-decoration: none;
   -webkit-tap-highlight-color: transparent; }
 
@@ -2082,9 +2080,9 @@ img.responsive-img, video.responsive-video {
     line-height: 1.8rem; }
 
 .parallax-container {
-  position: relative;
   overflow: hidden;
-  height: 500px; }
+  height: 600px; 
+}
 
 .parallax {
   position: absolute;
@@ -2123,6 +2121,21 @@ ul.staggered-list li {
 /*********************
   Media Query Classes
 **********************/
+@media only screen and (max-width:3000px) {
+  .scrollup {
+    width: 60px;
+    height: 40px;
+    position: fixed;
+    bottom: 50px;
+    right: 100px;
+    display: none;
+  }
+}
+
+@media only screen and (max-width:480px) {}
+
+@media only screen and (max-width: 1000px) {}
+
 @media only screen and (max-width : 600px) {
   .hide-on-small-only, .hide-on-small-and-down {
     display: none !important; } }
@@ -2170,7 +2183,12 @@ ul.staggered-list li {
 footer.page-footer {
   margin-top: 20px;
   padding-top: 20px;
-  background-color: #ee6e73; }
+  background-color: #1e2635; }
+
+  footer.page-footer a:hover{
+  text-decoration: underline;
+   }
+
   footer.page-footer .footer-copyright {
     overflow: hidden;
     height: 50px;
@@ -5005,12 +5023,19 @@ span.badge {
       .row .col.offset-l12 {
         margin-left: 100%; } }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 nav {
-  color: #fff;
-  background-color: #ee6e73;
+  background: #fff;
   width: 100%;
   height: 56px;
-  line-height: 56px; }
+  overflow: hidden;
+  line-height: 56px;
+  position: fixed;
+}
   nav a {
     color: #fff; }
   nav .nav-wrapper {
@@ -5038,7 +5063,6 @@ nav {
     font-size: 2.1rem;
     padding: 0; }
     nav .brand-logo.center {
-      left: 50%;
       -webkit-transform: translateX(-50%);
       -moz-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
@@ -5147,7 +5171,7 @@ a {
 
 html {
   line-height: 1.5;
-  font-family: "Roboto", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: normal;
   color: rgba(0, 0, 0, 0.87); }
   @media only screen and (min-width: 0) {
@@ -5160,7 +5184,9 @@ html {
     html {
       font-size: 15px; } }
 
+
 h1, h2, h3, h4, h5, h6 {
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400; }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -5589,7 +5615,6 @@ small {
   line-height: 36px;
   outline: 0;
   padding: 0 2rem;
-  text-transform: uppercase;
   vertical-align: middle;
   -webkit-tap-highlight-color: transparent; }
 
@@ -6353,6 +6378,7 @@ form p:last-child {
   [type="checkbox"] + label {
     position: relative;
     padding-left: 35px;
+    padding-top: 30px;
     cursor: pointer;
     display: inline-block;
     height: 25px;
@@ -8011,3 +8037,5 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 .btn-facebook{background-color:#3b5998; !important;background-image:none !important;color:#fff !important;text-shadow:0 -1px transparent !important;font-weight:bold !important}.btn-facebook:hover{color:#fff !important}
 
 .btn-gplus{background-color:#dd4b39; !important;background-image:none !important;color:#fff !important;text-shadow:0 -1px transparent !important;font-weight:bold !important}.btn-gplus:hover{color:#fff !important}
+
+ 

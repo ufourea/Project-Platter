@@ -1,27 +1,21 @@
 $(document).ready(function() {
-     $('select').material_select();
 
-    $("#contentContainer").css("min-height", $("body").height() * 55 / 100);
+    $("#contentContainer").css("min-height", $("body").height() * 125 / 100);
     if (isValidId(localStorage.getItem("userId"))) {
         contentLoader("dashboard.html");
-        $("#menuLoginBtn").hide();
-        $("#menuSignUpBtn").hide();
+        $("#LoginModalBtn").hide();
+        $("#menuHomeBtn").show();
+        $("#menuAboutBtn").hide();
+        $("#menuHowBtn").hide();
         $("#menuLogoutBtn").show();
+        $("#prof_pic").show();
     } else {
         contentLoader("home.html");
-        $("#menuLoginBtn").show();
-        $("#menuSignUpBtn").show();
         $("#menuLogoutBtn").hide();
+        $("#prof_pic").hide();
     }
 });
-$("body").on("click", "#menuLogoutBtn", function() {
-    localStorage.removeItem("userId");
-    localStorage.removeItem("isAdmin");
-    $("#menuLoginBtn").show();
-    $("#menuSignUpBtn").show();
-    $("#menuLogoutBtn").hide();
-    contentLoader("login.html");
-});
+
 $("body").on("click", "#menuLoginBtn", function() {
     if (isValidId(localStorage.getItem("userId"))) {
         $("#menuLoginBtn").hide();
@@ -55,6 +49,7 @@ $("body").on("click", "#menuHomeBtn", function() {
     } else {
         contentLoader("home.html");
     }
+
 });
 $("body").on("click", "#menuPostBtn", function() {
     if (isValidId(localStorage.getItem("userId"))) {
@@ -63,71 +58,9 @@ $("body").on("click", "#menuPostBtn", function() {
         contentLoader("signup.html");
     }
 });
-$("body").on("click", "#signUpBtn", function() {
-    var currentId = genGuid();
-    var isValid = true;
-    $(".signUpElements").each(function() {
-        if ($(this).val() == "") {
-            $(this).addClass("invalid");
-        } else {
-            $(this).removeClass("invalid");
-        }
-    });
-    if ($("#txtPassword").val() != $("#txtConfirmPwd").val()) {
-        $("#txtPassword").addClass("invalid");
-        $("#txtConfirmPwd").addClass("invalid");
-    }
-    $(".signUpElements").each(function() {
-        if ($(this).hasClass("invalid")) {
-            isValid = false;
-        }
-    });
-    if (isValid) {
-        var loadingDivId = "contentContainer";
-        var url = "addUser";
-        var data = {
-            "firstname": $("#txtFirstName").val(),
-            "lastname": $("#txtLastName").val(),
-            "email": $("#txtEmail").val(),
-            "monbileno": $("#txtMoileNo").val(),
-            "password": $("#txtPassword").val(),
-            "id": currentId
-        };
-        sendAjaxReq(loadingDivId, url, data);
-    }
-});
-$("body").on("click", "#loginBtn", function() {
-    $(".loginElement").each(function() {
-        if ($(this).hasClass("invalid")) {
-            $(this).removeClass("invalid");
-        }
-    });
-    $.ajax({
-        method: "POST",
-        url: "verifyUser",
-        data: {
-            "email": $("#txtEmail").val(),
-            "password": $("#txtPwd").val()
-        },
-        success: function(res) {
-            if (res.toLowerCase() == "invalid username") {
-                $("#txtEmail").addClass("invalid");
-            } else if (res.toLowerCase() == "invalid password") {
-                $("#txtPwd").addClass("invalid");
-            } else if (res.toLowerCase().indexOf("isn't yet activated") != "-1") {
-                alert(res);
-            } else {
-                contentLoader("dashboard.html");
-                $("#menuLoginBtn").hide();
-                $("#menuSignUpBtn").hide();
-                $("#menuLogoutBtn").show();
-                var res = JSON.parse(res);
-                localStorage.setItem("userId", res.id);
-                localStorage.setItem("isAdmin", res.admin);
-            }
-        }
-    })
-});
+
+
+
 $("body").on("click", "#dashboardSettingsBtn", function() {
     dashboardContentLoader("settings.html");
     $.ajax({
@@ -202,7 +135,7 @@ $("body").on("click", "#dashboardProfileBtn", function() {
         }
     });
 });
-$("body").on("click", ".projectStickies", function() {
+$("body").on("click", ".projectStickies", function(event) {
     var projectId = $(this).attr("id");
     getProjectBasedOnId(projectId);
 });
@@ -293,7 +226,8 @@ $("body").on("click", "#saveDetailsBtn", function() {
             }
         });
     } else {
-        alert("Invalid User Id");
+
+         alert("Invalid User Id");
     }
 });
 $("body").on("click", "#updateEmailBtn", function() {
@@ -310,21 +244,19 @@ $("body").on("click", "#updateEmailBtn", function() {
                     method: "post",
                     data: user,
                     success: function(resp) {
-                         $('#modal1').html("<br>" + "<p>" +"&emsp;&emsp;&emsp;"+ resp + "</p>" + "<br>");
-                        $('#modal1').openModal();
+                         alert(resp);
                     }
                 });
             } else {
-                alert("Invalid password");
+                 alert("Invalid password");
                 $("#currPwd").addClass("invalid");
             }
         } else {
-             $('#modal1').html("<br>" + "<p>" +"&emsp;&emsp;&emsp;"+ "Invalid email Id" + "</p>" + "<br>");
-             $('#modal1').openModal();
+              alert("Invalid Email Id");
             $("#currPwd").addClass("invalid");
         }
     } else {
-        alert("Invalid user id");
+         alert("Invalid User Id");
     }
 });
 $("body").on("click", "#updatePasswordBtn", function() {
@@ -343,21 +275,24 @@ $("body").on("click", "#updatePasswordBtn", function() {
                     method: "post",
                     data: user,
                     success: function(resp) {
-                        alert(resp);
+            
+                         alert(resp);
                     }
                 });
             } else {
-                $('#modal1').html("<br>" + "<p>" +"&emsp;&emsp;&emsp;"+ "Passwords do not match" + "</p>" + "<br>");
-                $('#modal1').openModal();
+               
+                 alert("Passwords do not match");
                 $("#newPwd").addClass("invalid");
                 $("#cnfPwd").addClass("invalid");
             }
         } else {
-            alert("Invalid Password");
+            
+             alert("Invalid Password");
             $("#pwd").addClass("invalid");
         }
     } else {
-        alert("Invalid user id");
+        
+         alert("Invalid User Id");
     }
 });
 $("body").on("click", "#saveProfileBtn", function() {
@@ -375,7 +310,7 @@ $("body").on("click", "#saveProfileBtn", function() {
             }
         });
     } else {
-        alert("Invalid user id");
+        alert("Invalid User Id");
     }
 });
 $("body").on("click", "#postProjectBtn", function() {
@@ -458,20 +393,11 @@ $("body").on("click", "#submitProjectBtn", function() {
             }
         });
     } else {
-        alert("Invalid user id");
+        alert("Invalid User Id");
     }
 
 });
 
-function genGuid() {
-    function s4() {
-        return Math.floor((1 + Math.random()) * 0x10000)
-            .toString(16)
-            .substring(1);
-    }
-    return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
-        s4() + '-' + s4() + s4() + s4();
-}
 
 function contentLoader(url) {
     $.ajax({
@@ -496,28 +422,6 @@ function dashboardContentLoader(url) {
     });
 }
 
-function sendAjaxReq(loadingDivId, url, data) {
-    $.ajax({
-        method: "POST",
-        url: url,
-        data: data,
-
-        success: function(res) {
-            $(".signUpElements").each(function() {
-                if ($(this).hasClass("invalid")) {
-                    $(this).removeClass("invalid");
-                }
-            });
-            if (res.toLowerCase() == "already registered with given email id") {
-                $("#txtEmail").addClass("invalid");
-                alert(res);
-            } else {
-                $("#menuHomeBtn").trigger("click");
-                alert("Activation mail has been sent to your registered email Id");
-            }
-        }
-    });
-}
 
 function isValidId(userId) {
     var isValid = false;
@@ -591,3 +495,33 @@ function loadAllProjects() {
         }
     });
 }
+$("body").on("click", "#AboutUsBtn", function() {
+        contentLoader("about.html");
+         $("#menuAboutBtn").hide();
+        $("#menuHowBtn").hide();
+        
+});
+$("body").on("click", "#privacyBtn", function() {
+        contentLoader("privacy.html");
+         $("#menuAboutBtn").hide();
+        $("#menuHowBtn").hide();
+         
+});
+$("body").on("click", "#contactBtn", function() {
+        contentLoader("contact.html");
+         $("#menuAboutBtn").hide();
+        $("#menuHowBtn").hide();
+    
+});
+$("body").on("click", "#termsBtn", function() {
+        contentLoader("terms.html");
+         $("#menuAboutBtn").hide();
+        $("#menuHowBtn").hide();
+    
+});
+$("body").on("click", "#refundBtn", function() {
+        contentLoader("refund.html");
+         $("#menuAboutBtn").hide();
+        $("#menuHowBtn").hide();
+    
+});
